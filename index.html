@@ -39,11 +39,12 @@
                     <input id="userEmail" type="email" name="userEmail">
                     <br>
                     <label for="userPhoneNumber">Telefone</label>
-                    <input id="userPhoneNumber" type="tel" name="userPhoneNumber" pattern="[0-9]{11}" placeholder="11111111111">
-                    <small>Preencha com 11 digitos no formato dd + numeros sem espaços nem hífen</small>
+                    <input id="userPhoneNumber" type="tel" name="userPhoneNumber" pattern="[0-9]{11}" placeholder="11111111111" aria-describedby="phoneHelp">
+                    <small id="phoneHelp">Preencha com 11 digitos no formato dd + numeros sem espaços nem hífen</small>
                     <br>
                     <label for="userImage">Upload de foto</label>
-                    <input id="userImage" type="file" accept="image/*" name="userImage">
+                    <input id="userImage" type="file" accept="image/*" name="userImage" aria-describedby="uploadHelp">
+                    <small id="uploadHelp">Envie uma foto no formato PNG ou JPG</small>
                     <br>
 
                 </fieldset>
@@ -60,8 +61,9 @@
                     <input id="notInformed" type="radio" name="userGender" value="notInformed">
                     <label for="notInformed">Prefiro não informar</label>
                     <br>
+
                     <label for="maritalStatus">Estado Civil:</label>
-                    <select name="maritalStatus">
+                    <select id="maritalStatus" name="userMaritalStatus">
 
                         <option value="notInformed">Selecione...</option>
                         <option value="casado">Casado</option>
@@ -71,8 +73,8 @@
                         <option value="UniãoEstavel">União estável</option>
                     </select>
 
-                    <label for="userState">Estado:</label>
-                    <select name="userState" required>
+                    <label for="state">Estado:</label>
+                    <select id="state" name="userState" required>
                         <option value="acre">Acre </option>
                         <option value="alagoas">Alagoas </option>
                         <option value="amapa">Amapá </option>
@@ -160,8 +162,8 @@
 
                     <br>
 
-                    <p>Comentário:</p>
-                    <textarea name="comment" id="userComment"></textarea>
+                    <label for="comment">Escreva sua opinião:</label>
+                    <textarea id="comment" name="userComment" placeholder="Digite aqui..."></textarea>
 
                 </fieldset>
 
@@ -174,7 +176,7 @@
 
                     <br>
 
-                    <input type="checkbox" name="userGetResult" id="getResult" value="Confirmed">
+                    <input type="checkbox" name="userGetResult" id="userGetResult" value="Confirmed">
                     <label for="userGetResult">Desejo receber resultado por e-mail</label>
 
                     
@@ -182,10 +184,10 @@
 
                 </fieldset>
 
-                <button type="submit">
+                <button type="submit" aria-label="Enviar dados do usuario">
                     Enviar
                 </button>
-                <button type="reset">
+                <button type="reset" aria-label="Limpar dados do usuario">
                     Limpar
                 </button>
 
